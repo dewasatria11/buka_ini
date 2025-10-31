@@ -637,5 +637,25 @@
     </div> 
    </div> 
   </div> 
+  <audio id="bgMusic" autoplay loop>
+    <source src="penjaga-hati-lagu-nadhif-basalamah-lirick-storywa-lirikan-lirikmusic-dlirik-story-lirik-128-ytshorts.savetube.me.mp3" type="audio/mpeg">
+  </audio>
+  <script>
+    // Auto play music
+    document.addEventListener('DOMContentLoaded', function() {
+      var audio = document.getElementById('bgMusic');
+      audio.volume = 0.5; // Set volume to 50%
+      
+      // Try to play audio
+      var playPromise = audio.play();
+      
+      // Handle promise if needed
+      if (playPromise !== undefined) {
+        playPromise.catch(error => {
+          console.log('Auto-play was prevented:', error);
+        });
+      }
+    });
+  </script>
 </body>
 </html>
